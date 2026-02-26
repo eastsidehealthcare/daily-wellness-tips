@@ -1,0 +1,59 @@
+Daily Wellness Tips
+
+A simple, offline app that delivers one health and wellness tip per day.
+
+🌟 Features:
+• One daily wellness tip
+• Works completely offline
+• No internet connection required
+• No permissions needed
+• Simple, clean interface
+• 30+ curated tips
+• Day-based rotation
+• Lightweight (<2MB)
+
+💪 Perfect for:
+• Building healthy habits
+• Daily mindfulness reminders
+
+• Simple wellness guidance
+• Offline health tips
+• Starting your day right
+• Quick wellness breaks
+
+🔒 Privacy First:
+• No data collection
+• No tracking
+• No ads
+• No personal information
+• Completely private
+• Works offline
+
+📱 Simple & Clean:
+• Easy to use interface
+• No complicated settings
+• Just open and get your daily tip
+• Beautiful minimal design
+
+🌿 Tip Categories:
+• Hydration
+• Sleep
+• Exercise
+• Nutrition
+• Mindfulness
+• Stress relief
+• And more!
+
+The app shows a different tip each day based on the day of the year. With 30+ tips, you'll get fresh advice every month.
+
+Perfect for anyone looking to improve their health with simple, actionable advice. No accounts, no subscriptions, just daily wellness.
+
+Download now and start your wellness journey today!
+
+---
+
+Privacy Policy: [Your Privacy Policy URL]
+Support: [Your Support Email]
+Version: 1.0
+Size: <2MB
+Requirements: Android 6.0+

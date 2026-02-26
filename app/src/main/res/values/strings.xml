@@ -1,6 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Daily Wellness Tips</string>
-    <string name="today_tip">Today\'s Tip</string>
-    <string name="loading">Loading tip...</string>
-    <string name="error_loading">Error loading tip. Please restart the app.</string>
 </resources>

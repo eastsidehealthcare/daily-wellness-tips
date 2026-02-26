@@ -1,0 +1,14 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#4A90E2"/>
+  <circle cx="256" cy="256" r="150" fill="white"/>
+  <!-- Heart shape -->
+  <path d="M256,350 
+           C300,320 350,270 350,220 
+           C350,180 320,150 280,150 
+           C250,150 230,170 256,200 
+           C282,170 262,150 232,150 
+           C192,150 162,180 162,220 
+           C162,270 212,320 256,350Z" 
+        fill="#FF6B6B"/>
+  <text x="256" y="400" text-anchor="middle" fill="white" font-family="Arial" font-size="40" font-weight="bold">DWT</text>
+</svg>

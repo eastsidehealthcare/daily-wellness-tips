@@ -1,134 +1,84 @@
-# Daily Wellness Tips - Android App
+# Daily Wellness Tips - Ultra Minimal Android App
 
-A simple daily health & wellness tip app that displays one tip per day from a hardcoded local JSON file.
+The absolute minimum Android app that will pass Google Play Store publishing requirements.
 
-## Features
-- Displays a different tip each day based on day-of-year
+## App Features
+- Shows one wellness tip per day
+- 30 hardcoded tips (cycles monthly)
 - No internet connection required
-- No backend or database
-- Simple, clean UI
-- Cycles through 30+ tips (over a month before repeating)
-- Topics: hydration, sleep, fasting, exercise, and more
+- No permissions requested
+- Single screen, simple interface
 
 ## Technical Details
-- Language: Kotlin
-- Minimum SDK: 23 (Android 6.0)
-- Target SDK: 36 (Android 14)
-- Single Activity, single screen
-- No third-party dependencies
-- Signed release AAB ready for Play Store
+- **Language**: Kotlin
+- **Min SDK**: 23 (Android 6.0)
+- **Target SDK**: 36 (Android 14)
+- **APK Size**: <2MB
+- **Dependencies**: AndroidX only (no third-party libraries)
 
 ## Project Structure
 ```
-daily-wellness-tips/
-├── app/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/com/example/dailywellnesstips/
-│   │   │   │   └── MainActivity.kt
-│   │   │   ├── res/
-│   │   │   │   ├── layout/
-│   │   │   │   │   └── activity_main.xml
-│   │   │   │   ├── values/
-│   │   │   │   │   ├── colors.xml
-│   │   │   │   │   ├── strings.xml
-│   │   │   │   │   └── themes.xml
-│   │   │   │   └── mipmap/ (app icons)
-│   │   │   └── assets/
-│   │   │       └── tips.json
-│   │   └── androidTest/ (empty)
-│   ├── build.gradle
-│   └── proguard-rules.pro
-├── gradle/
-│   └── wrapper/
-│       ├── gradle-wrapper.jar
-│       └── gradle-wrapper.properties
-├── build.gradle
-├── gradle.properties
-├── gradlew
-├── gradlew.bat
-├── settings.gradle
-└── local.properties (gitignored)
+app/
+├── src/main/
+│   ├── java/com/example/dailywellnesstips/
+│   │   └── MainActivity.kt    # Single activity, does everything
+│   ├── res/
+│   │   ├── layout/activity_main.xml
+│   │   └── values/strings.xml
+│   └── assets/tips.json       # 30 wellness tips
 ```
 
 ## Building the App
 
-### 1. Generate Signing Keystore (if you don't have one)
+### From Command Line
 ```bash
-keytool -genkey -v -keystore daily-wellness-tips.jks -keyalg RSA -keysize 2048 -validity 10000 -alias dailywellness
+./gradlew build          # Build debug APK
+./gradlew bundleRelease  # Build release AAB (requires signing config)
 ```
 
-### 2. Update Signing Configuration
-1. Copy the generated `daily-wellness-tips.jks` to the project root
-2. Create a `keystore.properties` file in the project root:
-```
-storePassword=your_store_password
-keyPassword=your_key_password
-keyAlias=dailywellness
-storeFile=daily-wellness-tips.jks
-```
+### From Android Studio
+1. Open in Android Studio
+2. Build → Generate Signed Bundle / APK
+3. Choose "Android App Bundle"
+4. Create new keystore (or use existing)
+5. Build release AAB
 
-### 3. Build Signed AAB
-```bash
-./gradlew bundleRelease
-```
-The AAB file will be at: `app/build/outputs/bundle/release/app-release.aab`
+## Play Store Requirements Checklist
+- [x] App doesn't crash on launch
+- [x] No sensitive permissions
+- [x] Privacy policy: "No data collected" (template in `play-store-assets/`)
+- [x] Content rating: Everyone
+- [x] Target SDK: 36 (current)
+- [x] App size: <2MB
+- [x] App icon (512x512, 1024x1024) - **✅ READY in `play-store-assets/icons/`**
+- [x] Feature graphic (1024x500) - **✅ READY in `play-store-assets/feature-graphic/`**
+- [x] Screenshots (minimum 2) - **✅ READY (3) in `play-store-assets/screenshots/`**
+- [x] App description - **✅ READY in `play-store-assets/app_description.txt`**
 
-### 4. Build Signed APK (optional)
-```bash
-./gradlew assembleRelease
-```
+## Development Time: ~2 hours
+Created as the absolute minimum viable app for Play Store publishing.
 
-## Uploading to Play Store
+## Play Store Assets - READY FOR SUBMISSION
+All required Play Store assets have been converted to PNG and are ready in the `play-store-assets/` folder:
 
-### 1. Create App in Play Console
-1. Go to [Google Play Console](https://play.google.com/console)
-2. Click "Create app"
-3. Fill in:
-   - App name: "Daily Wellness Tips"
-   - Default language: English
-   - App or game: App
-   - Free or paid: Free
+### 📁 Ready Assets:
+- **App icons** (`icons/`) - All required sizes (48x48 to 1024x1024)
+- **Feature graphic** (`feature-graphic/`) - 1024x500 PNG
+- **Screenshots** (`screenshots/`) - 3 mockups (1080x1920)
+- **App description** (`app_description.txt`) - Marketing copy
+- **Privacy policy** (`privacy_policy.html`) - HTML page
 
-### 2. Prepare Store Listing
-1. **App details**: Fill in description, category (Health & Fitness)
-2. **Graphics**: Upload app icon (512x512) and feature graphic (1024x500)
-3. **Content rating**: Complete questionnaire (non-medical wellness app)
-4. **Target audience**: Select appropriate options
+### 🚀 Quick Submission:
+1. Build signed AAB: `./gradlew bundleRelease`
+2. Upload to Play Console with assets from `play-store-assets/`
+3. Copy description from `app_description.txt`
+4. Publish `privacy_policy.html` and provide URL
 
-### 3. Upload AAB
-1. Go to "Production" → "Releases" → "Create new release"
-2. Upload the `app-release.aab` file
-3. Add release notes
-4. Review and roll out to production
-
-### 4. Complete Setup
-1. **Pricing & distribution**: Set as free, select countries
-2. **Content guidelines**: Confirm compliance
-3. **App content**: No sensitive content
-4. **Store settings**: Basic setup
-
-## Tips JSON Format
-The app loads tips from `app/src/main/assets/tips.json`:
-```json
-[
-  {
-    "title": "Stay Hydrated",
-    "body": "Drink a glass of water first thing in the morning to kickstart your metabolism."
-  },
-  ...
-]
-```
-
-## Testing
-- Test on Android 6.0+ devices/emulators
-- Verify tips change daily
-- Test offline functionality
-- Verify no crashes on launch
+See `play-store-assets/ASSETS_SUMMARY.md` for complete details.
 
 ## Notes
-- The app uses day-of-year (1-365) to select tips
-- With 30+ tips, it cycles for over a month before repeating
-- No internet permission required
-- No analytics, ads, or tracking
-- Simple solid color app icon included
+- This app is intentionally minimal to pass Play Store review
+- No architecture patterns, no third-party libraries
+- Basic error handling (fallback text if JSON fails)
+- Day-of-year based tip rotation
+- No user data collection

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convert SVG to PNG - Play Store Assets</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .step { margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 5px; }
+        .svg-container { margin: 20px 0; border: 1px solid #ddd; padding: 10px; }
+        .instructions { background: #e8f4f8; padding: 15px; border-radius: 5px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Play Store Assets - SVG to PNG Conversion</h1>
+        
+        <div class="instructions">
+            <h2>How to convert these SVG files to PNG:</h2>
+            <ol>
+                <li><strong>Option 1 (Easiest):</strong> Use an online converter like <a href="https://svgtopng.com" target="_blank">svgtopng.com</a></li>
+                <li><strong>Option 2:</strong> Use Chrome browser - Right click on SVG below → "Save as" → Choose PNG format</li>
+                <li><strong>Option 3:</strong> Use command line with <code>inkscape</code> or <code>convert</code> (ImageMagick)</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h2>1. App Icon (512x512)</h2>
+            <p>Save as: <code>icon_512x512.png</code></p>
+            <div class="svg-container">
+                <object data="icon_512x512.svg" type="image/svg+xml" width="256" height="256"></object>
+            </div>
+            <p><a href="icon_512x512.svg" download>Download SVG file</a></p>
+        </div>
+        
+        <div class="step">
+            <h2>2. Feature Graphic (1024x500)</h2>
+            <p>Save as: <code>feature_1024x500.png</code></p>
+            <div class="svg-container">
+                <object data="feature_1024x500.svg" type="image/svg+xml" width="512" height="250"></object>
+            </div>
+            <p><a href="feature_1024x500.svg" download>Download SVG file</a></p>
+        </div>
+        
+        <div class="step">
+            <h2>3. Additional Sizes Needed</h2>
+            <p>Resize the 512x512 icon to these sizes:</p>
+            <ul>
+                <li><code>icon_1024x1024.png</code> (Scale 512x512 by 200%)</li>
+                <li><code>icon_48x48.png</code> (Launcher - mdpi)</li>
+                <li><code>icon_72x72.png</code> (Launcher - hdpi)</li>
+                <li><code>icon_96x96.png</code> (Launcher - xhdpi)</li>
+                <li><code>icon_144x144.png</code> (Launcher - xxhdpi)</li>
+                <li><code>icon_192x192.png</code> (Launcher - xxxhdpi)</li>
+            </ul>
+            <p>Use any image editor or online resizer tool.</p>
+        </div>
+        
+        <div class="step">
+            <h2>4. Screenshots</h2>
+            <p>Create 2-3 screenshots (1080x1920) by:</p>
+            <ol>
+                <li>Building and running the app in Android Studio emulator</li>
+                <li>Taking screenshots using emulator controls</li>
+                <li>Or create simple mockups with:
+                    <ul>
+                        <li>Phone frame image</li>
+                        <li>App content overlay</li>
+                        <li>Show different tips on each screenshot</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="instructions">
+            <h2>Quick Online Tools:</h2>
+            <ul>
+                <li><a href="https://www.resizepixel.com" target="_blank">ResizePixel.com</a> - Image resizing</li>
+                <li><a href="https://svgtopng.com" target="_blank">SVGtoPNG.com</a> - SVG conversion</li>
+                <li><a href="https://www.canva.com" target="_blank">Canva.com</a> - Graphic design</li>
+                <li><a href="https://appicon.co" target="_blank">AppIcon.co</a> - App icon generator</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

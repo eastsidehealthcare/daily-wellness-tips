@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <data-extraction-rules>
-    <!--
-    Rules for Data Extraction on Android 13 (API level 33) and higher.
-    This file specifies which files can be accessed by device copy or nearby share.
-    -->
-    
     <cloud-backup>
-        <!-- Include only the tips JSON file for backup -->
-        <include domain="file" path="assets/tips.json"/>
+        <!-- Include everything -->
     </cloud-backup>
-    
     <device-transfer>
-        <!-- Exclude all files from device transfer -->
-        <exclude domain="root" path="."/>
+        <!-- Include everything -->
     </device-transfer>
-    
 </data-extraction-rules>
