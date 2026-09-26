@@ -2,6 +2,12 @@ plugins {
     id 'com.android.application'
 }
 
+def keystoreProps = new Properties()
+def keystorePropsFile = rootProject.file('keystore.properties')
+if (keystorePropsFile.exists()) {
+    keystorePropsFile.withInputStream { keystoreProps.load(it) }
+}
+
 android {
     namespace 'com.eastsidehealthcarestaffing.wellness'
     compileSdk 36
@@ -14,14 +20,14 @@ android {
         versionName "1.0"
     }
 
-  signingConfigs {
-      release {
-          storeFile file("../release-keystore.jks")
-          storePassword "Catfish@Riverside@Twisting8"
-          keyAlias "mykey"
-          keyPassword "Catfish@Riverside@Twisting8"
-      }
-  }
+    signingConfigs {
+        release {
+            storeFile rootProject.file(keystoreProps['storeFile'])
+            storePassword keystoreProps['storePassword']
+            keyAlias keystoreProps['keyAlias']
+            keyPassword keystoreProps['keyPassword']
+        }
+    }
 
     buildTypes {
         release {
