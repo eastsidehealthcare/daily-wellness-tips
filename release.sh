@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Builds a signed release AAB and verifies it is uploadable.
-# Does NOT upload — that is a manual Play Console step.
+# Does NOT upload - that is a manual Play Console step.
 #
 # Requires keystore.properties and the .jks beside it, both at this directory.
 # If they are missing the build fails at configuration time, before any task runs.
